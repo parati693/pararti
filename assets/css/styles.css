@@ -1,0 +1,82 @@
+/* Archivo original movido a assets/css/styles.css */
+
+body {
+  background: linear-gradient(120deg, #ffdde1 0%, #ee9ca7 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Dancing Script', 'Segoe UI', cursive, sans-serif;
+  margin: 0;
+}
+
+.love-letter {
+  background: #fff0f6;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(255, 0, 98, 0.2);
+  padding: 60px 30px 40px 30px; /* más espacio arriba */
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  overflow: visible; /* permitir que el corazón sobresalga */
+  animation: fadeIn 2s;
+}
+
+.love-letter h1 {
+  color: #e75480;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  animation: popIn 1.2s;
+}
+
+.love-letter p {
+  color: #b30059;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  animation: fadeInText 2.5s;
+}
+
+.heart {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  top: 0px; /* ahora el corazón se ve completo */
+  transform: translateX(-50%);
+  animation: heartbeat 1.2s infinite;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px #e75480aa);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1) translateX(-50%); }
+  20%, 60% { transform: scale(1.2) translateX(-50%); }
+  40%, 80% { transform: scale(0.9) translateX(-50%); }
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
